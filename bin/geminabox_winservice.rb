@@ -12,7 +12,7 @@ begin
       puts "starting"
       Dir.mkdir GEMINABOX_DATA unless Dir.exists? GEMINABOX_DATA
       Geminabox.data = GEMINABOX_DATA
-      Geminabox::Server.run!( bind: '0.0.0.0', port: 9090, server: 'thin' )
+      Geminabox::Server.run!( bind: '0.0.0.0', port: 9090, server: 'webrick' )
       while running?
         File.open(LOG_FILE, "a"){ |f| f.puts "Service is running #{Time.now}" } 
         sleep 3600
