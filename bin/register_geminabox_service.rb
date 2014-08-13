@@ -8,7 +8,7 @@ SERVICE_DISPLAYNAME = 'Geminabox'
 cmd = "#{RbConfig.ruby} -C c:/temp #{File.join(File.absolute_path(File.dirname(__FILE__)), 'geminabox_winservice.rb')}"
 
 # You must provide at least one argument.
-raise ArgumentError, 'No argument provided' unless ARGV[0]
+raise ArgumentError, "No argument provided\nUsage: #{__FILE__} install/start/stop/uninstall/pause/resume" unless ARGV[0]
 
 case ARGV[0].downcase
    when 'install'
